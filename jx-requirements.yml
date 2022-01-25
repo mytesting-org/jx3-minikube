@@ -14,18 +14,23 @@ spec:
     gitName: github
     gitServer: https://github.com
     provider: minikube
+    registry: 10.100.105.44
   environments:
   - key: dev
+    owner: mytesting-org
+    repository: jx3-minikube
   - key: staging
   - key: production
   ingress:
     domain: 192.168.49.2.nip.io
-    externalDNS: false
+    kind: ingress
     namespaceSubDomain: -jx.
     tls:
       email: ""
       enabled: false
       production: false
+  pipelineUser:
+    username: jx-bot-test
   repository: bucketrepo
   secretStorage: local
   vault: {}
